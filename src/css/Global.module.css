@@ -1,0 +1,20 @@
+.row-order{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.space-between{
+    justify-content: space-between
+}
+
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.error{
+    font-weight: bold;
+    color:red;
+}

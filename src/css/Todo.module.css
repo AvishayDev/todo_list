@@ -1,0 +1,12 @@
+
+
+
+.overline {
+    text-decoration: line-through;
+}
+
+
+.todo-style{
+    border: 2px solid #aadeff8a;
+    margin-top: -1px;
+}
