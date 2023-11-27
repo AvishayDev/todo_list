@@ -20,7 +20,7 @@ function AddTaskBar() {
         }
 
         setTaskText('');
-        setTodos([...todos,{text:taskText, checked:false}]);
+        setTodos([...todos,{text:taskText, checked:false,id:todos.length}]);
 
     }
 

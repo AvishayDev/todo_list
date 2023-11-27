@@ -13,13 +13,14 @@ export function TodosProvider(props) {
     const setNewTodos = (newTodos) =>{
 
         console.log(newTodos)
-        const todosLength = todos.length
+
+        //const todosLength = todos.length
         setTodos(newTodos)
-        
-        if (showTodos.length === todosLength){
         setShowTodos(newTodos)
-        console.log('show changed')
-        }
+        // if (showTodos.length === todosLength){
+        //     setShowTodos(newTodos)
+        //     console.log('show changed')
+        // }
     }
 
 

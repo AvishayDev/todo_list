@@ -11,9 +11,6 @@ function Todo(props) {
     const [isEditable,setIsEditable] = useState(false);
     const [taskText,setTaskText] = useState(props.text);
 
-    useEffect(() => {
-        setTaskText(props.text);
-    }, [props.text]);
     return (
             <div className={[globalStyles['row-order'],globalStyles['space-between'], styles['todo-style']].join(' ')}>
                 <div className={[globalStyles['row-order']].join(' ')} style={{marginLeft:'5px'}}>
@@ -29,14 +26,17 @@ function Todo(props) {
                             onChange={(event)=>setTaskText(event.target.value)}/>
                             :
                             <p className={props.checked ? styles.overline : ''}>
-                                {taskText}
+                                {props.text}
                             </p>
                         }
                 </div>
 
                 <div className={globalStyles['row-order']} style={{margin:'5px'}}>
                     <DeleteIcon onClick={props.onDelete}/>
-                    <div onClick={()=>{ isEditable && props.onTextChange(taskText)
+                    <div onClick={()=>{ isEditable && (() => {
+                                                        props.onTextChange(taskText);
+                                                        setTaskText(taskText);
+                                                    })()
                                             setIsEditable(!isEditable);}}>
                             {isEditable ? <CheckIcon/> : <EditIcon/>}
                     </div>
